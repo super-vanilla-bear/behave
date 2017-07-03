@@ -271,7 +271,7 @@ options = [
           help="Alias for --no-snippets --no-source.")),
 
     (("-r", "--retry"),
-     dict(action="retry_count",
+     dict(type=int, dest="retry_count",
           help="Retry failing features a number of times before declaring failure")),
 
     (("-s", "--no-source"),
@@ -549,7 +549,6 @@ class Configuration(object):
             # -- AUTO-DISCOVER: Verbose mode from command-line args.
             verbose = ("-v" in command_args) or ("--verbose" in command_args)
 
-        self.retry_count = None
         self.version = None
         self.tags_help = None
         self.lang_list = None

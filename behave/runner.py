@@ -538,7 +538,7 @@ class ModelRunner(object):
                     for formatter in self.formatters:
                         formatter.uri(feature.filename)
 
-                    tries = int(self.config.retry_count)
+                    tries = self.config.retry_count
                     failed = True
                     while failed and tries > 0:
                         failed = feature.run(self)
