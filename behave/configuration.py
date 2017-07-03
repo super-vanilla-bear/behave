@@ -270,6 +270,10 @@ options = [
      dict(action="store_true",
           help="Alias for --no-snippets --no-source.")),
 
+    (("-r", "--retry"),
+     dict(action="retry_count",
+          help="Retry failing features a number of times before declaring failure")),
+
     (("-s", "--no-source"),
      dict(action="store_false", dest="show_source",
           help="""Don't print the file and line of the step definition with the
@@ -508,6 +512,7 @@ class Configuration(object):
         summary=True,
         junit=False,
         stage=None,
+        retry_count=1,
         userdata={},
         # -- SPECIAL:
         default_format="pretty",    # -- Used when no formatters are configured.
