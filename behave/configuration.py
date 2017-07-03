@@ -549,6 +549,7 @@ class Configuration(object):
             # -- AUTO-DISCOVER: Verbose mode from command-line args.
             verbose = ("-v" in command_args) or ("--verbose" in command_args)
 
+        self.retry_count = None
         self.version = None
         self.tags_help = None
         self.lang_list = None
